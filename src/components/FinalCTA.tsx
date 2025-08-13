@@ -1,7 +1,11 @@
 
+import { useState } from 'react';
 import { GlassButton } from "@/components/ui/glass-button";
 
 export default function FinalCTA() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   return (
     <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-black to-neutral-950">
@@ -39,12 +43,65 @@ export default function FinalCTA() {
         </div>
         
         <div className="animate-fade-in-up-delay">
-          <GlassButton 
-            size="lg"
-            className="glass-primary transform hover:scale-105 transition-transform duration-300"
-          >
-            <span className="text-button text-xl">Join the Waitlist</span>
-          </GlassButton>
+          {isSubmitted ? (
+            <div className="text-center">
+              <div className="text-green-400 text-xl mb-4">✓ Thank you for joining!</div>
+              <p className="text-neutral-300">We'll be in touch soon with exclusive opportunities.</p>
+            </div>
+          ) : (
+            <form 
+              action="https://formspree.io/f/xvgqyoyd"
+              method="POST"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setIsSubmitting(true);
+                
+                const form = e.target as HTMLFormElement;
+                const formData = new FormData();
+                formData.append('email', email);
+                formData.append('source', 'Fulton Market Waitlist');
+                
+                try {
+                  const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { Accept: 'application/json' }
+                  });
+                  
+                  if (response.ok) {
+                    setIsSubmitted(true);
+                    setEmail('');
+                  } else {
+                    throw new Error('Form submission failed');
+                  }
+                } catch (error) {
+                  alert('Something went wrong. Please try again.');
+                }
+                setIsSubmitting(false);
+              }}
+              className="max-w-md mx-auto"
+            >
+              <div className="flex gap-4">
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:border-amber-200/50 focus:outline-none focus:ring-2 focus:ring-amber-200/20"
+                />
+                <input type="hidden" name="source" value="Fulton Market Waitlist" />
+                <GlassButton 
+                  type="submit"
+                  disabled={isSubmitting || !email}
+                  className="glass-primary px-8 py-4"
+                >
+                  {isSubmitting ? 'Joining...' : 'Join'}
+                </GlassButton>
+              </div>
+            </form>
+          )}
         </div>
         
         {/* Enhanced feature list */}
