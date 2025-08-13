@@ -65,6 +65,11 @@ export default function Home() {
         <meta name="msapplication-navbutton-color" content="#000000" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         
+        {/* Enhanced Local SEO */}
+        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+        <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+        <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
+        
         {/* Geo targeting */}
         <meta name="geo.region" content="US-IL" />
         <meta name="geo.placename" content="Chicago, Illinois" />

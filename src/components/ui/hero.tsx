@@ -18,6 +18,7 @@ interface HeroProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
   title?: React.ReactNode
   subtitle?: React.ReactNode
   actions?: HeroAction[]
+  customActions?: React.ReactNode
   titleClassName?: string
   subtitleClassName?: string
   actionsClassName?: string
@@ -32,6 +33,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
       title,
       subtitle,
       actions,
+      customActions,
       titleClassName,
       subtitleClassName,
       actionsClassName,
@@ -139,18 +141,22 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                 {subtitle}
               </p>
             )}
-            {actions && actions.length > 0 && (
-              <div className={cn("flex gap-4", actionsClassName)}>
-                {actions.map((action, index) => (
-                  <Button
-                    key={index}
-                    variant={action.variant || "default"}
-                    asChild
-                  >
-                    <Link href={action.href}>{action.label}</Link>
-                  </Button>
-                ))}
-              </div>
+            {customActions ? (
+              customActions
+            ) : (
+              actions && actions.length > 0 && (
+                <div className={cn("flex gap-4", actionsClassName)}>
+                  {actions.map((action, index) => (
+                    <Button
+                      key={index}
+                      variant={action.variant || "default"}
+                      asChild
+                    >
+                      <Link href={action.href}>{action.label}</Link>
+                    </Button>
+                  ))}
+                </div>
+              )
             )}
           </div>
         </motion.div>

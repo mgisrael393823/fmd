@@ -1,0 +1,27 @@
+{
+  "name": "Fulton Market Apartments - Luxury Chicago Rentals",
+  "short_name": "Fulton Market Apts",
+  "description": "Find the best Fulton Market apartments for rent in Chicago. Premium apartment rentals in West Loop's most desirable neighborhood.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "lifestyle", "housing"],
+  "lang": "en-US",
+  "scope": "/",
+  "prefer_related_applications": false
+}
