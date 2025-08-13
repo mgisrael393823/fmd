@@ -21,8 +21,8 @@ export default function Invitation() {
             <div className="w-32 h-px bg-amber-200/60 mx-auto" />
             
             <p className="text-2xl md:text-3xl text-neutral-300 font-light max-w-3xl mx-auto leading-relaxed">
-              A curated living network built for those who value{" "}
-              <span className="gold-accent italic">context over contract.</span>
+              A curated rental experience built for those who value{" "}
+              <span className="gold-accent italic">quality over quantity.</span>
             </p>
           </div>
         </div>

@@ -1,42 +1,43 @@
-
 import React from 'react';
 import Head from 'next/head';
-import Hero from "@/components/Hero";
-import Invitation from "@/components/Invitation";
-import FAQ from "@/components/FAQ";
-import FinalCTA from "@/components/FinalCTA";
+import Hero from "@/components/Hero-new";
+import Invitation from "@/components/Invitation-new";
+import PlaceExperience from "@/components/PlaceExperience-new";
+import Differentiators from "@/components/Differentiators-new";
+import FAQ from "@/components/FAQ-new";
+import FinalCTA from "@/components/FinalCTA-new";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Fulton Market Apartments - Premium Rental Marketplace | Early Access</title>
+        <title>Fulton Market Apartments - Exclusive Residences in Chicago | Reserve Access</title>
         <meta 
           name="description" 
-          content="Premium rental network for Fulton Market apartments. Get early access to Chicago's most sought-after addresses before they're widely advertised. Free for renters." 
+          content="Reserve access to Fulton Market's most discreet residences. Curated apartments in Chicago's premier district. Off-market availability, viewings by reservation only." 
         />
         <meta 
           name="keywords" 
-          content="Fulton Market apartments, apartment marketplace Chicago, premium rental network, early access apartments, luxury apartments Fulton Market, rental concierge service Chicago" 
+          content="Fulton Market apartments, apartments in Fulton Market, Chicago apartments, luxury apartments Fulton Market, exclusive apartments in Fulton Market Chicago, new apartments in Fulton Market District" 
         />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://rentfultonmarket.apartments/" />
-        <meta property="og:title" content="Fulton Market Apartments - Premium Rental Marketplace" />
-        <meta property="og:description" content="Premium rental network connecting you to Fulton Market's most sought-after addresses. Get early access - free for renters." />
+        <meta property="og:title" content="Fulton Market Apartments - Exclusive Residences in Chicago" />
+        <meta property="og:description" content="Reserve access to Fulton Market's most discreet residences. Curated apartments in Chicago's premier district." />
         <meta property="og:image" content="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://rentfultonmarket.apartments/" />
-        <meta property="twitter:title" content="Fulton Market Apartments - Premium Rental Marketplace" />
-        <meta property="twitter:description" content="Premium rental network connecting you to Fulton Market's most sought-after addresses. Get early access - free for renters." />
+        <meta property="twitter:title" content="Fulton Market Apartments - Exclusive Residences in Chicago" />
+        <meta property="twitter:description" content="Reserve access to Fulton Market's most discreet residences. Curated apartments in Chicago's premier district." />
         <meta property="twitter:image" content="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" />
 
         {/* Additional SEO */}
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Fulton Market Rental Network" />
+        <meta name="author" content="Fulton Market Apartments" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://rentfultonmarket.apartments/" />
         
@@ -47,8 +48,8 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
-              "name": "Fulton Market Rental Network",
-              "description": "Premium rental marketplace connecting renters to exclusive Fulton Market apartments",
+              "name": "Fulton Market Apartments",
+              "description": "Exclusive apartment rentals in Chicago's Fulton Market District",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Chicago",
@@ -57,7 +58,7 @@ export default function Home() {
                 "streetAddress": "Fulton Market District"
               },
               "areaServed": "Fulton Market, Chicago, IL",
-              "serviceType": "Rental Marketplace & Concierge Services"
+              "serviceType": "Apartment Rentals"
             })
           }}
         />
@@ -67,12 +68,14 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
       
-      <main className="bg-black text-white smooth-scroll">
+      <div className="bg-black text-white smooth-scroll">
         <Hero />
         <Invitation />
+        <PlaceExperience />
+        <Differentiators />
         <FAQ />
         <FinalCTA />
-      </main>
+      </div>
     </>
   );
 }

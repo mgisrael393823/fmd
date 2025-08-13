@@ -16,12 +16,12 @@ export default function Hero() {
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 hero-text tracking-tight">
-          What if your next apartment{" "}
-          <span className="italic gold-accent">found you?</span>
+          The apartment experience{" "}
+          <span className="italic gold-accent">that finds you.</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-neutral-300 mb-12 font-light tracking-wide max-w-2xl mx-auto">
-          Reserve access to Fulton Market's most discreet residences.
+          A premium rental network connecting you to Fulton Market's most sought-after addresses and hidden gems.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -29,7 +29,7 @@ export default function Hero() {
             size="lg"
             className="glass-primary"
           >
-            Reserve Access
+            Get Early Access
           </GlassButton>
           
           <GlassButton 

@@ -8,20 +8,20 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "What makes Fulton Market apartments different?",
-      answer: "Curation, context, quiet entry. Each residence is selected for design integrity and neighborhood harmony."
+      question: "How does early access work?",
+      answer: "Register to receive priority notifications about new rental listings before they're posted on other platforms. All qualified applicants welcome."
     },
     {
-      question: "Are pets welcome?",
-      answer: "Yes—with thoughtful care integrated subtly into the living experience."
+      question: "What makes these apartments special?",
+      answer: "Every property is hand-selected for exceptional design, prime Fulton Market location, and premium amenities. We focus on quality over quantity."
     },
     {
-      question: "What amenities are included?",
-      answer: "Integrated co-working spaces, rooftop atmosphere, and discreet hospitality services tailored to modern living."
+      question: "What's included with your service?",
+      answer: "Personalized property matching, private showings, market insights, application assistance, and ongoing resident support."
     },
     {
-      question: "How does reservation work?",
-      answer: "Submit your request. Access is shared with a select few prior to public release. Not all requests will be granted."
+      question: "How much does this service cost?",
+      answer: "Our service is completely free for renters. Property owners pay us to find qualified tenants for their premium units."
     }
   ];
 
@@ -29,7 +29,7 @@ export default function FAQ() {
     <section className="py-24 px-4 bg-neutral-950">
       <div className="container max-w-4xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl font-light text-white mb-16 text-center">
-          Questions & Context
+          Questions & Details
         </h2>
         
         <div className="space-y-4">

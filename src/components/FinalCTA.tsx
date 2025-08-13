@@ -26,12 +26,12 @@ export default function FinalCTA() {
       
       <div className="relative z-10 container max-w-4xl mx-auto text-center">
         <h2 className="font-serif text-4xl md:text-6xl font-light text-white mb-8">
-          Reserve Your Place in Fulton Market's{" "}
-          <span className="italic gold-accent">Quietest Addresses</span>
+          Discover Fulton Market's{" "}
+          <span className="italic gold-accent">Finest Rentals</span>
         </h2>
         
         <p className="text-xl md:text-2xl text-neutral-300 mb-12 font-light max-w-2xl mx-auto">
-          Not all requests will be granted. If this aligns with how you live, reserve access now.
+          Join our network to access premium rental opportunities and personalized service.
         </p>
         
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
@@ -62,22 +62,22 @@ export default function FinalCTA() {
             className="glass-primary"
             contentClassName="w-full justify-center"
           >
-            Reserve Access
+            Get Early Access
           </GlassButton>
         </form>
         
         <div className="mt-12 flex justify-center space-x-8 text-sm text-neutral-400">
           <span className="flex items-center">
             <div className="w-2 h-2 bg-amber-400/60 rounded-full mr-2" />
-            No listing page
+            Free for renters
           </span>
           <span className="flex items-center">
             <div className="w-2 h-2 bg-amber-400/60 rounded-full mr-2" />
-            By reservation
+            Premium properties
           </span>
           <span className="flex items-center">
             <div className="w-2 h-2 bg-amber-400/60 rounded-full mr-2" />
-            Curated collection
+            Personalized service
           </span>
         </div>
       </div>
