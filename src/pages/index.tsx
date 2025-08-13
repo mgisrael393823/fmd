@@ -66,7 +66,7 @@ export default function Home() {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         
         {/* Enhanced Local SEO */}
-        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+        <meta name="google-site-verification" content="7F7KTn7eLWV7tFhOuMa8WGZOK0J_gh2stYJEoRbMw0I" />
         <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
         <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
         
@@ -81,6 +81,15 @@ export default function Home() {
         <meta name="price" content="$2000-$6000" />
         <meta name="priceCurrency" content="USD" />
         <meta name="availability" content="InStock" />
+        
+        {/* Local Business Schema */}
+        <meta name="business:contact_data:street_address" content="Fulton Market District" />
+        <meta name="business:contact_data:locality" content="Chicago" />
+        <meta name="business:contact_data:region" content="Illinois" />
+        <meta name="business:contact_data:postal_code" content="60607" />
+        <meta name="business:contact_data:country_name" content="United States" />
+        <meta name="place:location:latitude" content="41.8858" />
+        <meta name="place:location:longitude" content="-87.6467" />
         
         <link rel="canonical" href="https://rentfultonmarket.apartments/" />
         <link rel="alternate" hrefLang="en" href="https://rentfultonmarket.apartments/" />
@@ -167,11 +176,23 @@ export default function Home() {
         <meta name="format-detection" content="telephone=no" />
       </Head>
       
-      <main className="bg-black text-white smooth-scroll">
+      <main className="bg-black text-white smooth-scroll" role="main">
         <Hero />
         <Invitation />
-        <FAQ />
-        <FinalCTA />
+        <section aria-label="Frequently Asked Questions">
+          <FAQ />
+        </section>
+        <section aria-label="Join our waitlist">
+          <FinalCTA />
+        </section>
+        
+        {/* Skip to content link for accessibility */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-200 focus:text-black focus:rounded"
+        >
+          Skip to main content
+        </a>
       </main>
     </>
   );

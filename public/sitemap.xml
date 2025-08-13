@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   
   <!-- Homepage -->
   <url>
     <loc>https://rentfultonmarket.apartments/</loc>
     <lastmod>2025-08-13</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop</image:loc>
-      <image:caption>Luxury apartments in Fulton Market Chicago</image:caption>
+      <image:caption>Premium Fulton Market apartments for rent in Chicago West Loop</image:caption>
+      <image:title>Fulton Market Luxury Apartments</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop</image:loc>
+      <image:caption>Modern luxury apartment interior in Fulton Market Chicago</image:caption>
+      <image:title>Fulton Market Apartment Interior</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200&auto=format&fit=crop</image:loc>
+      <image:caption>Luxury apartment living room with Chicago skyline views</image:caption>
+      <image:title>Fulton Market Apartment Living Room</image:title>
     </image:image>
   </url>
 

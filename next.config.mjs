@@ -15,6 +15,7 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     // optimizeCss: true, // Disabled due to critters dependency issue
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   
   // SEO optimizations
@@ -42,6 +43,10 @@ const nextConfig = {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
           },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
         ],
       },
       {
@@ -51,6 +56,10 @@ const nextConfig = {
             key: 'Content-Type',
             value: 'application/xml',
           },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
         ],
       },
       {
@@ -59,6 +68,28 @@ const nextConfig = {
           {
             key: 'Content-Type',
             value: 'text/plain',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=2592000',
           },
         ],
       },
