@@ -1,0 +1,197 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 45 30% 85%;
+    --primary-foreground: 0 0% 8%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 45 20% 20%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 45 30% 85%;
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Crimson Pro', Georgia, serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl w-full;
+  }
+  
+  .cinematic-gradient {
+    background: linear-gradient(135deg, 
+      rgba(0,0,0,0.8) 0%, 
+      rgba(0,0,0,0.4) 50%, 
+      rgba(0,0,0,0.8) 100%);
+  }
+  
+  .gold-accent {
+    @apply text-amber-200/90;
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+  
+  .hero-text {
+    text-shadow: 0 4px 16px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5);
+  }
+  
+  .luxury-card {
+    @apply bg-neutral-900/60 backdrop-blur-sm border border-neutral-700/40;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .luxury-card:hover {
+    @apply bg-neutral-800/70;
+    box-shadow: 0 16px 64px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+  }
+  
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+  
+  .section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-grain {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  
+  .bg-luxury-gradient {
+    background: linear-gradient(135deg, 
+      rgba(23, 23, 23, 0.95) 0%, 
+      rgba(38, 38, 38, 0.90) 50%, 
+      rgba(23, 23, 23, 0.95) 100%);
+  }
+  
+  .text-shadow-luxury {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+  
+  .border-luxury {
+    @apply border-neutral-700/30;
+  }
+  
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 64px rgba(0,0,0,0.25);
+  }
+
+  /* Glass Button Styles */
+  .glass-button-wrap {
+    position: relative;
+    display: inline-block;
+  }
+
+  .glass-button {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-button:active {
+    transform: translateY(0);
+  }
+
+  .glass-button-shadow {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-button-wrap:hover .glass-button-shadow {
+    top: 6px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-button-text {
+    position: relative;
+    z-index: 20;
+  }
+
+  /* Primary Glass Button Variant */
+  .glass-button.glass-primary {
+    background: rgba(251, 191, 36, 0.2);
+    border-color: rgba(251, 191, 36, 0.4);
+    color: #fbbf24;
+  }
+
+  .glass-button.glass-primary:hover {
+    background: rgba(251, 191, 36, 0.3);
+    border-color: rgba(251, 191, 36, 0.6);
+    color: #f59e0b;
+  }
+}
