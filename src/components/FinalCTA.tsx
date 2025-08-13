@@ -1,84 +1,68 @@
 
-import { useState } from "react";
 import { GlassButton } from "@/components/ui/glass-button";
 
 export default function FinalCTA() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", { email, message });
-  };
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
+    <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-black to-neutral-950">
+      {/* Enhanced background with parallax */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 transform scale-110"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2670&auto=format&fit=crop')`,
         }}
       />
       
-      <div className="absolute inset-0 bg-black/70" />
-      <div className="absolute inset-0 bg-grain opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80" />
+      <div className="absolute inset-0 bg-grain opacity-15" />
       
-      <div className="relative z-10 container max-w-4xl mx-auto text-center">
-        <h2 className="font-serif text-4xl md:text-6xl font-light text-white mb-8">
-          Discover Fulton Market's{" "}
-          <span className="italic gold-accent">Finest Rentals</span>
-        </h2>
-        
-        <p className="text-xl md:text-2xl text-neutral-300 mb-12 font-light max-w-2xl mx-auto">
-          Join our network to access premium rental opportunities and personalized service.
-        </p>
-        
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
-          <div>
-            <input
-              type="email"
-              placeholder="Your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-white/40 transition-colors"
-            />
-          </div>
+      {/* Floating accent elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-amber-200/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-48 h-48 bg-amber-200/3 rounded-full blur-3xl" />
+      
+      <div className="relative z-10 container max-w-5xl mx-auto text-center">
+        <div className="animate-fade-in-up">
+          <h2 className="text-h2 font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8">
+            Discover Fulton Market's{" "}
+            <span className="italic text-amber-200/95 inline-block" style={{
+              textShadow: '0 0 40px rgba(251, 191, 36, 0.3)'
+            }}>
+              Finest Rentals
+            </span>
+          </h2>
           
-          <div>
-            <textarea
-              placeholder="Tell us about your ideal home (optional)"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              rows={4}
-              className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-white/40 transition-colors resize-none"
-            />
-          </div>
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-200/60 to-transparent mx-auto mb-12" />
           
+          <p className="text-body-light text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-16 max-w-3xl mx-auto">
+            Join our network to access premium rental opportunities and personalized service.
+          </p>
+        </div>
+        
+        <div className="animate-fade-in-up-delay">
           <GlassButton 
-            type="submit"
             size="lg"
-            className="glass-primary"
-            contentClassName="w-full justify-center"
+            className="glass-primary transform hover:scale-105 transition-transform duration-300"
           >
-            Get Early Access
+            <span className="text-button text-xl">Join the Waitlist</span>
           </GlassButton>
-        </form>
+        </div>
         
-        <div className="mt-12 flex justify-center space-x-8 text-sm text-neutral-400">
-          <span className="flex items-center">
-            <div className="w-2 h-2 bg-amber-400/60 rounded-full mr-2" />
-            Free for renters
-          </span>
-          <span className="flex items-center">
-            <div className="w-2 h-2 bg-amber-400/60 rounded-full mr-2" />
-            Premium properties
-          </span>
-          <span className="flex items-center">
-            <div className="w-2 h-2 bg-amber-400/60 rounded-full mr-2" />
-            Personalized service
-          </span>
+        {/* Enhanced feature list */}
+        <div className="mt-16 animate-fade-in-up-delay-2">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 text-lg text-neutral-300">
+            {[
+              { icon: "✓", text: "Free for renters" },
+              { icon: "★", text: "Premium properties" },
+              { icon: "♦", text: "Personalized service" }
+            ].map((item, index) => (
+              <div key={index} className="flex items-center group hover:text-amber-200/80 transition-colors duration-300">
+                <div className="w-8 h-8 bg-amber-200/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-amber-200/20 transition-colors duration-300">
+                  <span className="text-amber-200/80 font-medium">{item.icon}</span>
+                </div>
+                <span className="text-caption">{item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -58,7 +58,7 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
 
     return (
       <Component
-        ref={ref}
+        ref={ref as any}
         className={cn(
           'relative',
           sectionVariants.padding[padding],

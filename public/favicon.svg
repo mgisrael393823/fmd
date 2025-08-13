@@ -1,0 +1,39 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background -->
+  <rect width="32" height="32" rx="8" fill="#000000"/>
+  
+  <!-- Buildings silhouette -->
+  <g>
+    <!-- Main center building -->
+    <rect x="11" y="6" width="10" height="20" fill="#FBD200" rx="1"/>
+    
+    <!-- Left building -->
+    <rect x="4" y="12" width="7" height="14" fill="#F59E0B" rx="0.5"/>
+    
+    <!-- Right building -->
+    <rect x="21" y="9" width="7" height="17" fill="#D97706" rx="0.5"/>
+    
+    <!-- Simple windows on main building -->
+    <rect x="13" y="9" width="2" height="2" fill="#000000" rx="0.3"/>
+    <rect x="17" y="9" width="2" height="2" fill="#000000" rx="0.3"/>
+    <rect x="13" y="13" width="2" height="2" fill="#000000" rx="0.3"/>
+    <rect x="17" y="13" width="2" height="2" fill="#000000" rx="0.3"/>
+    <rect x="13" y="17" width="2" height="2" fill="#000000" rx="0.3"/>
+    <rect x="17" y="17" width="2" height="2" fill="#000000" rx="0.3"/>
+    
+    <!-- Simple windows on left building -->
+    <rect x="5.5" y="15" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    <rect x="8" y="15" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    <rect x="5.5" y="19" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    <rect x="8" y="19" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    
+    <!-- Simple windows on right building -->
+    <rect x="22.5" y="12" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    <rect x="25" y="12" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    <rect x="22.5" y="16" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    <rect x="25" y="16" width="1.5" height="1.5" fill="#000000" rx="0.2"/>
+    
+    <!-- "FM" letters -->
+    <text x="16" y="24" font-family="Arial, sans-serif" font-size="4" font-weight="bold" text-anchor="middle" fill="#000000">FM</text>
+  </g>
+</svg>

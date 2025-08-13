@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { forwardRef, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Input size */
   size?: 'sm' | 'md' | 'lg';
   /** Error state */

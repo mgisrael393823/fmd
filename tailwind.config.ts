@@ -8,6 +8,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+  	fontFamily: {
+  		'sans': ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+  		'serif': ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+  	},
   	extend: {
   		// Design system spacing (8px grid)
   		spacing: {
@@ -116,6 +120,9 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		backgroundImage: {
+  			'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
   		}
   	}
   },

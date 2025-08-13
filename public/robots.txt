@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rentfultonmarket.apartments/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block crawlers from unnecessary directories
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /uploads/
