@@ -5,6 +5,8 @@ import Hero from "@/components/Hero";
 import Invitation from "@/components/Invitation";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import Differentiators from "@/components/Differentiators";
+import PlaceExperience from "@/components/PlaceExperience";
 
 export default function Home() {
   return (
@@ -67,9 +69,11 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
       
-      <main className="bg-black text-white smooth-scroll">
+      <main className="bg-black text-white scroll-smooth">
         <Hero />
         <Invitation />
+        <Differentiators />
+        <PlaceExperience />
         <FAQ />
         <FinalCTA />
       </main>

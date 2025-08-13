@@ -1,47 +1,67 @@
+import { Section, Container, Typography, BackgroundImage } from '@/components/design-system';
 
 export default function PlaceExperience() {
   const highlights = [
-    "Michelin-starred dining within reach",
-    "Innovation hubs on your doorstep", 
-    "Seamless connectivity—transit, bike, runway"
+    'Michelin-starred dining within reach',
+    'Innovation hubs on your doorstep', 
+    'Seamless connectivity—transit, bike, runway'
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center">
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2670&auto=format&fit=crop')`,
-        }}
+    <Section 
+      fullHeight 
+      padding="xl"
+      className="flex items-center"
+    >
+      <BackgroundImage
+        src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2670&auto=format&fit=crop"
+        alt="Fulton Market district skyline showing modern architecture and urban development"
+        overlayOpacity={50}
+        className="absolute inset-0"
       />
       
-      <div className="absolute inset-0 bg-black/50" />
-      
-      <div className="relative z-10 container py-20">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-white mb-8 tracking-tight leading-tight">
-              Located at the intersection of{" "}
-              <span className="italic gold-accent">grit and glass</span>: Fulton Market.
-            </h2>
-            
-            <p className="text-xl md:text-2xl text-neutral-300 font-light max-w-3xl mx-auto leading-relaxed">
-              Michelin cuisine, cultural ateliers, tech firms—these aren't amenities, they're your surroundings.
-            </p>
-          </div>
+      <Container size="xl">
+        <div className="text-center mb-16">
+          <Typography
+            variant="h2"
+            family="serif"
+            weight="light"
+            align="center"
+            balance
+            className="mb-8 text-shadow-luxury"
+          >
+            Located at the intersection of{" "}
+            <span className="italic text-amber-200/90">grit and glass</span>: Fulton Market.
+          </Typography>
           
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-block w-2 h-2 bg-amber-200/80 rounded-full mb-4" />
-                <p className="text-lg text-white font-light tracking-wide">
-                  {highlight}
-                </p>
-              </div>
-            ))}
-          </div>
+          <Typography
+            variant="body-lg"
+            color="secondary"
+            weight="light"
+            align="center"
+            className="max-w-3xl mx-auto"
+          >
+            Michelin cuisine, cultural ateliers, tech firms—these aren't amenities, 
+            they're your surroundings.
+          </Typography>
         </div>
-      </div>
-    </section>
+        
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
+          {highlights.map((highlight, index) => (
+            <div key={index} className="text-center">
+              <div className="inline-block w-2 h-2 bg-amber-200/80 rounded-full mb-4" />
+              <Typography
+                variant="body"
+                color="primary"
+                weight="light"
+                className="tracking-wide"
+              >
+                {highlight}
+              </Typography>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </Section>
   );
 }

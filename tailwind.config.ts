@@ -9,6 +9,11 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+                fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Crimson Pro', 'serif'],
+                },
+                
   		// Design system spacing (8px grid)
   		spacing: {
   			'4.5': '1.125rem', // 18px

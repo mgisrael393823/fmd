@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { forwardRef, HTMLAttributes, ReactNode } from 'react';
+import { forwardRef, HTMLAttributes } from 'react';
 
 export interface FormFieldProps extends HTMLAttributes<HTMLDivElement> {
   /** Field label */

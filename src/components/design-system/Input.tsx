@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { forwardRef, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Input size */
   size?: 'sm' | 'md' | 'lg';
   /** Error state */
@@ -10,7 +10,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   variant?: 'default' | 'glass';
 }
 
-export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
   /** Textarea size */
   size?: 'sm' | 'md' | 'lg';
   /** Error state */
@@ -40,13 +40,16 @@ const inputVariants = {
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ 
-    className,
-    size = 'md',
-    variant = 'default',
-    error = false,
-    ...props 
-  }, ref) => {
+  (
+    {
+      className,
+      size = 'md',
+      variant = 'default',
+      error = false,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <input
         ref={ref}
@@ -70,13 +73,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 Input.displayName = 'Input';
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ 
-    className,
-    size = 'md',
-    variant = 'default',
-    error = false,
-    ...props 
-  }, ref) => {
+  (
+    {
+      className,
+      size = 'md',
+      variant = 'default',
+      error = false,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <textarea
         ref={ref}
