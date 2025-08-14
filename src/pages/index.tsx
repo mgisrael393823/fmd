@@ -141,41 +141,32 @@ export default function Home() {
                 "itemListElement": [
                   {
                     "@type": "Offer",
+                    "price": "2000",
+                    "priceCurrency": "USD",
+                    "availability": "http://schema.org/InStock",
                     "itemOffered": {
                       "@type": "Product",
-                      "name": "Studio Apartments in Fulton Market Chicago",
-                      "offers": {
-                        "@type": "Offer",
-                        "price": "2000",
-                        "priceCurrency": "USD",
-                        "availability": "http://schema.org/InStock"
-                      }
+                      "name": "Studio Apartments in Fulton Market Chicago"
                     }
                   },
                   {
                     "@type": "Offer", 
+                    "price": "2500",
+                    "priceCurrency": "USD",
+                    "availability": "http://schema.org/InStock",
                     "itemOffered": {
                       "@type": "Product",
-                      "name": "1 Bedroom Apartments in Fulton Market Chicago",
-                      "offers": {
-                        "@type": "Offer",
-                        "price": "2500",
-                        "priceCurrency": "USD",
-                        "availability": "http://schema.org/InStock"
-                      }
+                      "name": "1 Bedroom Apartments in Fulton Market Chicago"
                     }
                   },
                   {
                     "@type": "Offer",
+                    "price": "3500",
+                    "priceCurrency": "USD",
+                    "availability": "http://schema.org/InStock",
                     "itemOffered": {
                       "@type": "Product", 
-                      "name": "2 Bedroom Apartments in Fulton Market Chicago",
-                      "offers": {
-                        "@type": "Offer",
-                        "price": "3500",
-                        "priceCurrency": "USD",
-                        "availability": "http://schema.org/InStock"
-                      }
+                      "name": "2 Bedroom Apartments in Fulton Market Chicago"
                     }
                   }
                 ]
