@@ -31,7 +31,7 @@ export default function FinalCTA() {
       <div className="absolute top-20 left-10 w-32 h-32 bg-amber-200/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-amber-200/3 rounded-full blur-3xl" />
       
-      <Container size="lg" className="relative z-10 text-center">
+      <Container size="lg" className="relative z-20 text-center">
         <div className="animate-fade-in-up">
           <h2 className="text-h2 font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8">
             Discover Chicago's{" "}

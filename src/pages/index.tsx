@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Head from 'next/head';
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Invitation from "@/components/Invitation";
 import FAQ from "@/components/FAQ";
@@ -194,13 +195,22 @@ export default function Home() {
         <meta name="format-detection" content="telephone=no" />
       </Head>
       
+      <Navigation />
+      
       <main className="bg-black text-white smooth-scroll" role="main">
-        <Hero />
-        <Invitation />
-        <section aria-label="Frequently Asked Questions">
+        <section id="hero" aria-label="Hero section">
+          <Hero />
+        </section>
+        
+        <section id="apartments" aria-label="Apartment information">
+          <Invitation />
+        </section>
+        
+        <section id="faq" aria-label="Frequently Asked Questions">
           <FAQ />
         </section>
-        <section aria-label="Join our waitlist">
+        
+        <section id="contact" aria-label="Join our waitlist">
           <FinalCTA />
         </section>
         

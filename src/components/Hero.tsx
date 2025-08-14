@@ -52,7 +52,7 @@ export default function Hero() {
       }
       subtitle="Discover luxury apartments in Chicago's Fulton Market - the West Loop's most desirable neighborhood. Premium studios, 1BR, and 2BR units available now."
       customActions={
-        <Container size="sm" className="pt-8">
+        <Container size="sm" className="pt-8 relative z-50">
           {!mounted ? (
             <div className="px-8 py-4 bg-amber-200/90 text-black font-medium text-lg rounded-lg opacity-0">
               Join the Waitlist
@@ -66,7 +66,7 @@ export default function Hero() {
             <div className="text-center">
               <button
                 onClick={() => setShowEmailInput(true)}
-                className="px-8 py-4 bg-amber-200/90 hover:bg-amber-200 text-black font-medium text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="relative z-10 px-8 py-4 bg-amber-200/90 hover:bg-amber-200 text-black font-medium text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Join the Waitlist
               </button>

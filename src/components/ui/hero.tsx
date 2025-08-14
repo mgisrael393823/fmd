@@ -53,7 +53,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
         {gradient && (
           <div className="absolute top-0 isolate z-0 flex w-screen flex-1 items-start justify-center">
             {blur && (
-              <div className="absolute top-0 z-50 h-48 w-screen bg-transparent opacity-10 backdrop-blur-md" />
+              <div className="absolute top-0 z-10 h-48 w-screen bg-transparent opacity-10 backdrop-blur-md pointer-events-none" />
             )}
 
             {/* Main glow */}
