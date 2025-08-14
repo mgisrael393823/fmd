@@ -143,11 +143,19 @@ export default function Home() {
                 "@id": "#studio",
                 "name": "Studio Apartments in Fulton Market Chicago",
                 "url": "https://rentfultonmarket.apartments/#studio",
+                "image": ["https://rentfultonmarket.apartments/images/studio.jpg"],
+                "description": "Modern studio apartments in Chicago's Fulton Market district featuring premium finishes and amenities",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Rent Fulton Market"
+                },
                 "offers": {
                   "@type": "Offer",
                   "price": "2000",
                   "priceCurrency": "USD",
-                  "availability": "https://schema.org/InStock"
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://rentfultonmarket.apartments/#studio",
+                  "itemCondition": "https://schema.org/NewCondition"
                 }
               },
               {
@@ -156,11 +164,19 @@ export default function Home() {
                 "@id": "#1br",
                 "name": "1 Bedroom Apartments in Fulton Market Chicago",
                 "url": "https://rentfultonmarket.apartments/#1br",
+                "image": ["https://rentfultonmarket.apartments/images/1br.jpg"],
+                "description": "Spacious 1-bedroom apartments in Chicago's Fulton Market with modern layouts and luxury amenities",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Rent Fulton Market"
+                },
                 "offers": {
                   "@type": "Offer",
                   "price": "2500",
                   "priceCurrency": "USD",
-                  "availability": "https://schema.org/InStock"
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://rentfultonmarket.apartments/#1br",
+                  "itemCondition": "https://schema.org/NewCondition"
                 }
               },
               {
@@ -169,11 +185,19 @@ export default function Home() {
                 "@id": "#2br",
                 "name": "2 Bedroom Apartments in Fulton Market Chicago",
                 "url": "https://rentfultonmarket.apartments/#2br",
+                "image": ["https://rentfultonmarket.apartments/images/2br.jpg"],
+                "description": "Premium 2-bedroom apartments in Chicago's Fulton Market offering spacious living and high-end finishes",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Rent Fulton Market"
+                },
                 "offers": {
                   "@type": "Offer",
                   "price": "3500",
                   "priceCurrency": "USD",
-                  "availability": "https://schema.org/InStock"
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://rentfultonmarket.apartments/#2br",
+                  "itemCondition": "https://schema.org/NewCondition"
                 }
               }
             ])
