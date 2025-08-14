@@ -1,6 +1,6 @@
 {
-  "name": "softgen-starter",
-  "version": "2.2.1",
+  "name": "fulton-market-apartments",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
