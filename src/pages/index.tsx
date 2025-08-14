@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Fulton Market Apartments for Rent | Best Apartments in Fulton Market Chicago</title>
+        <title>Fulton Market Chicago Apartments for Rent | Best Apartments in Chicago Fulton Market</title>
         <meta 
           name="description" 
-          content="Find the best Fulton Market apartments for rent in Chicago. 500+ luxury apartments, studios, 1-2 bedroom units in West Loop. Rent Fulton Market apartments now!" 
+          content="Find the best Fulton Market Chicago apartments for rent. 500+ luxury apartments, studios, 1-2 bedroom units in Chicago's West Loop. Rent Chicago Fulton Market apartments now!" 
         />
         <meta 
           name="keywords" 
-          content="fulton market apartments, apartments in fulton market, rent fulton market, fulton market apartments for rent, fulton market chicago apartments, west loop apartments, luxury apartments fulton market, chicago apartments rent, fulton market rental, studio apartments fulton market, 1 bedroom fulton market, 2 bedroom fulton market" 
+          content="fulton market chicago apartments, chicago fulton market apartments, apartments in fulton market chicago, rent fulton market chicago, fulton market apartments chicago, west loop chicago apartments, luxury apartments fulton market chicago, chicago apartments rent, fulton market chicago rental, studio apartments fulton market chicago, 1 bedroom fulton market chicago, 2 bedroom fulton market chicago, chicago west loop rentals" 
         />
         
         {/* Open Graph / Facebook */}
@@ -109,9 +109,9 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["RealEstateAgent", "LocalBusiness"],
-              "name": "Fulton Market Apartments",
-              "alternateName": "Rent Fulton Market",
-              "description": "Find the best Fulton Market apartments for rent in Chicago. Premium apartment rentals in West Loop's most desirable neighborhood.",
+              "name": "Fulton Market Chicago Apartments",
+              "alternateName": "Rent Fulton Market Chicago",
+              "description": "Find the best Fulton Market Chicago apartments for rent. Premium apartment rentals in Chicago's West Loop most desirable neighborhood.",
               "url": "https://rentfultonmarket.apartments/",
               "address": {
                 "@type": "PostalAddress",
@@ -126,7 +126,7 @@ export default function Home() {
                 "West Loop, Chicago, IL",
                 "Near West Side, Chicago, IL"
               ],
-              "serviceType": ["Apartment Rentals", "Luxury Apartment Rentals", "Studio Apartments", "1 Bedroom Apartments", "2 Bedroom Apartments"],
+              "serviceType": ["Chicago Apartment Rentals", "Fulton Market Chicago Luxury Apartment Rentals", "Chicago Studio Apartments", "Chicago 1 Bedroom Apartments", "Chicago 2 Bedroom Apartments"],
               "priceRange": "$2000-$6000",
               "telephone": "+1-312-XXX-XXXX",
               "geo": {
@@ -136,27 +136,27 @@ export default function Home() {
               },
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Fulton Market Apartment Rentals",
+                "name": "Fulton Market Chicago Apartment Rentals",
                 "itemListElement": [
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Product",
-                      "name": "Studio Apartments in Fulton Market"
+                      "name": "Studio Apartments in Fulton Market Chicago"
                     }
                   },
                   {
                     "@type": "Offer", 
                     "itemOffered": {
                       "@type": "Product",
-                      "name": "1 Bedroom Apartments in Fulton Market"
+                      "name": "1 Bedroom Apartments in Fulton Market Chicago"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Product", 
-                      "name": "2 Bedroom Apartments in Fulton Market"
+                      "name": "2 Bedroom Apartments in Fulton Market Chicago"
                     }
                   }
                 ]

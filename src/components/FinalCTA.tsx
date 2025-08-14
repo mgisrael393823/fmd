@@ -27,18 +27,18 @@ export default function FinalCTA() {
       <div className="relative z-10 container max-w-5xl mx-auto text-center">
         <div className="animate-fade-in-up">
           <h2 className="text-h2 font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8">
-            Discover Fulton Market's{" "}
+            Discover Chicago's{" "}
             <span className="italic text-amber-200/95 inline-block" style={{
               textShadow: '0 0 40px rgba(251, 191, 36, 0.3)'
             }}>
-              Finest Rentals
+              Finest Fulton Market Rentals
             </span>
           </h2>
           
           <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-200/60 to-transparent mx-auto mb-12" />
           
           <p className="text-body-light text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-16 max-w-3xl mx-auto">
-            Join our network to access premium rental opportunities and personalized service.
+            Join our network to access Chicago's most premium Fulton Market rental opportunities and personalized service.
           </p>
         </div>
         

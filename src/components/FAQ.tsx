@@ -8,20 +8,20 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "What apartments are available for rent in Fulton Market?",
-      answer: "We have 500+ luxury apartments for rent in Fulton Market including studios, 1-bedroom, and 2-bedroom units. All apartments feature modern amenities, premium finishes, and prime West Loop locations."
+      question: "What apartments are available for rent in Chicago's Fulton Market?",
+      answer: "We have 500+ luxury apartments for rent in Chicago's Fulton Market including studios, 1-bedroom, and 2-bedroom units. All apartments feature modern amenities, premium finishes, and prime West Loop Chicago locations."
     },
     {
-      question: "How much do Fulton Market apartments cost?",
-      answer: "Fulton Market apartment rents range from $2,000-$6,000+ depending on size and amenities. Studios start around $2,000, 1-bedrooms from $2,500, and 2-bedrooms from $3,500. Contact us for current pricing and availability."
+      question: "How much do Chicago Fulton Market apartments cost?",
+      answer: "Chicago Fulton Market apartment rents range from $2,000-$6,000+ depending on size and amenities. Studios start around $2,000, 1-bedrooms from $2,500, and 2-bedrooms from $3,500. Contact us for current pricing and availability."
     },
     {
       question: "What neighborhoods are near Fulton Market?",
       answer: "Fulton Market is in Chicago's West Loop, bordered by the Loop, River North, and Near West Side. It's walking distance to Union Station, Google Chicago, and top restaurants on Restaurant Row."
     },
     {
-      question: "What amenities do Fulton Market apartments have?",
-      answer: "Most Fulton Market rental apartments include luxury amenities like rooftop decks, fitness centers, concierge services, in-unit laundry, stainless steel appliances, and parking. Many buildings are pet-friendly."
+      question: "What amenities do Chicago Fulton Market apartments have?",
+      answer: "Most Chicago Fulton Market rental apartments include luxury amenities like rooftop decks, fitness centers, concierge services, in-unit laundry, stainless steel appliances, and parking. Many buildings are pet-friendly."
     },
     {
       question: "How do I rent an apartment in Fulton Market?",
@@ -37,7 +37,7 @@ export default function FAQ() {
       <div className="container max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-20 animate-fade-in-up">
           <h2 className="text-h2 font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6">
-            Fulton Market <span className="text-amber-200/90">Apartments FAQ</span>
+            Chicago Fulton Market <span className="text-amber-200/90">Apartments FAQ</span>
           </h2>
           <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-200/60 to-transparent mx-auto" />
         </div>

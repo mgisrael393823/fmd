@@ -39,11 +39,11 @@ export default function Hero() {
       className="min-h-screen bg-black"
       title={
         <>
-          <span className="text-white">Fulton Market</span>{" "}
+          <span className="text-white">Fulton Market Chicago</span>{" "}
           <span className="text-amber-200 italic">Apartments for Rent</span>
         </>
       }
-      subtitle="Find luxury apartments in Fulton Market, Chicago's premier West Loop neighborhood. Studios, 1BR, 2BR units available now."
+      subtitle="Discover luxury apartments in Chicago's Fulton Market - the West Loop's most desirable neighborhood. Premium studios, 1BR, and 2BR units available now."
       customActions={
         <div className="pt-8">
           {isSubmitted ? (
