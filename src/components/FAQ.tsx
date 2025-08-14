@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Container, Section } from '@/components/design-system';
+import Head from 'next/head';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -27,11 +28,92 @@ export default function FAQ() {
     {
       question: "How do I rent an apartment in Fulton Market?",
       answer: "Browse available Fulton Market apartments, schedule viewings, and apply online. Our service is free for renters - we help you find and secure the perfect apartment in Chicago's most desirable neighborhood."
+    },
+    {
+      question: "What is the average rent in Fulton Market Chicago?",
+      answer: "The average rent in Fulton Market Chicago varies by unit type: studios average $2,200, 1-bedrooms average $2,800, and 2-bedrooms average $4,200. Luxury high-rise buildings command premium rents, while converted lofts offer more affordable options."
+    },
+    {
+      question: "Are pets allowed in Fulton Market apartments?",
+      answer: "Yes, many Fulton Market apartments are pet-friendly! Most buildings allow cats and dogs with typical pet deposits of $200-500. Some luxury buildings offer dog runs, pet spas, and grooming stations. Weight and breed restrictions may apply."
+    },
+    {
+      question: "What restaurants are near Fulton Market apartments?",
+      answer: "Fulton Market is Chicago's Restaurant Row with world-class dining. Nearby favorites include Girl & the Goat, Au Cheval, Next, and Alinea. The neighborhood features over 100 restaurants, from Michelin-starred establishments to casual neighborhood spots."
+    },
+    {
+      question: "How far is Fulton Market from downtown Chicago?",
+      answer: "Fulton Market is just 1-2 miles from downtown Chicago's Loop. It's a 10-15 minute walk, 5-minute bike ride, or quick train ride on the Green/Pink Lines. Many residents walk to work in the financial district daily."
+    },
+    {
+      question: "What is the best time to rent in Fulton Market?",
+      answer: "The best time to rent in Fulton Market is typically September-November and February-April when inventory is higher and rents may be more negotiable. Summer months see higher demand from new graduates and relocating professionals."
+    },
+    {
+      question: "Are there apartments near Google Chicago in Fulton Market?",
+      answer: "Yes! Google Chicago's office at 1000 W Fulton Market is surrounded by luxury apartment buildings. Many tech workers live within walking distance in buildings like Fulton West, The Hoxton, and converted Fulton Market lofts."
+    },
+    {
+      question: "Do Fulton Market apartments have parking?",
+      answer: "Most Fulton Market apartments include parking, either in attached garages or nearby lots. Monthly parking rates range from $150-300. Some luxury buildings offer valet parking, EV charging stations, and covered parking options."
+    },
+    {
+      question: "What public transportation is near Fulton Market apartments?",
+      answer: "Fulton Market apartments have excellent transit access. The Morgan Green/Pink Line station is 3 blocks away, providing direct service downtown. Multiple bus lines serve the area, and Union Station is within walking distance for regional travel."
+    },
+    {
+      question: "Are there luxury Fulton Market apartments available?",
+      answer: "Absolutely! Fulton Market features numerous luxury apartment buildings with premium amenities like rooftop pools, concierge services, fitness centers, and stunning city views. Popular luxury buildings include high-rises and converted industrial lofts."
+    },
+    {
+      question: "What grocery stores are near Fulton Market apartments?",
+      answer: "Fulton Market residents have access to Whole Foods Market (2 blocks), Mariano's, and multiple smaller markets. The historic Fulton Market District also features specialty food vendors, butchers, and the popular Fulton Street Farmers Market."
+    },
+    {
+      question: "Are there studio apartments under $2500 in Fulton Market?",
+      answer: "Yes, studio apartments under $2500 are available in Fulton Market, typically in older buildings or smaller units. These may be converted lofts or smaller spaces in mixed-use buildings. Demand is high for affordable studios in this prime location."
+    },
+    {
+      question: "What makes Fulton Market apartments special?",
+      answer: "Fulton Market apartments offer urban living at its finest: industrial-chic loft conversions, modern high-rises, proximity to Chicago's best restaurants, walking distance to downtown, and a vibrant arts/culture scene. It's where historic charm meets modern luxury."
+    },
+    {
+      question: "Are there furnished apartments in Fulton Market Chicago?",
+      answer: "Yes, furnished apartments are available in Fulton Market for short-term and long-term rentals. Many luxury buildings offer furnished units with modern furniture, full kitchens, and premium amenities - perfect for relocating professionals and temporary residents."
+    },
+    {
+      question: "What is the nightlife like near Fulton Market apartments?",
+      answer: "Fulton Market offers vibrant nightlife with rooftop bars, craft cocktail lounges, and late-night eateries. Popular spots include Cindy's Rooftop, The Aviary, and numerous brewery taprooms. The neighborhood buzzes with energy well into the night."
+    },
+    {
+      question: "Are there apartments with gym access in Fulton Market?",
+      answer: "Most luxury Fulton Market apartments include state-of-the-art fitness centers with cardio equipment, weights, and group fitness spaces. Many buildings also feature yoga studios, swimming pools, and some offer personal training services for residents."
     }
   ];
 
+  // Create FAQ Schema markup
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
-    <Section padding="xl" background="neutral" className="overflow-hidden bg-gradient-to-b from-neutral-950 via-black to-black">
+    <>
+      <Head>
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </Head>
+      <Section padding="xl" background="neutral" className="overflow-hidden bg-gradient-to-b from-neutral-950 via-black to-black">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grain opacity-10" />
       
@@ -93,5 +175,6 @@ export default function FAQ() {
         </div>
       </Container>
     </Section>
+    </>
   );
 }

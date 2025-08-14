@@ -1,20 +1,43 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import { Home, Building2, HelpCircle, Mail } from 'lucide-react'
 import { NavBar } from "@/components/ui/tubelight-navbar"
 
 export default function Navigation() {
+  const router = useRouter()
   const [activeSection, setActiveSection] = useState('Home')
 
   const navItems = [
-    { name: 'Home', url: '#hero', icon: Home },
-    { name: 'Apartments', url: '#apartments', icon: Building2 },
-    { name: 'FAQ', url: '#faq', icon: HelpCircle },
-    { name: 'Contact', url: '#contact', icon: Mail }
+    { name: 'Home', url: '/', icon: Home },
+    { name: 'Apartments', url: '/apartments', icon: Building2 },
+    { name: 'Amenities', url: '/amenities', icon: Building2 },
+    { name: 'Pricing', url: '/pricing', icon: Building2 },
+    { name: 'FAQ', url: '/#faq', icon: HelpCircle },
+    { name: 'Contact', url: '/#contact', icon: Mail }
   ]
 
+  // Set active section based on current route
   useEffect(() => {
+    const path = router.pathname
+    if (path === '/') {
+      setActiveSection('Home')
+    } else if (path === '/apartments') {
+      setActiveSection('Apartments')
+    } else if (path === '/amenities') {
+      setActiveSection('Amenities')
+    } else if (path === '/pricing') {
+      setActiveSection('Pricing')
+    } else if (path === '/fulton-market-chicago') {
+      setActiveSection('Home') // Neighborhood page uses Home styling
+    }
+  }, [router.pathname])
+
+  // Only add scroll listener on home page
+  useEffect(() => {
+    if (router.pathname !== '/') return
+
     const handleScroll = () => {
       const sections = ['hero', 'apartments', 'faq', 'contact']
       const current = sections.find(section => {
@@ -41,7 +64,7 @@ export default function Navigation() {
     handleScroll() // Check on mount
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [router.pathname])
 
   // Add smooth scrolling behavior
   useEffect(() => {
