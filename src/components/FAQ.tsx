@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { GlassButton } from "@/components/ui/glass-button";
+import { Container, Section } from '@/components/design-system';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -30,19 +31,19 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-32 px-6 bg-gradient-to-b from-neutral-950 to-black relative overflow-hidden">
+    <Section padding="xl" background="neutral" className="overflow-hidden bg-gradient-to-b from-neutral-950 via-black to-black">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grain opacity-10" />
       
-      <div className="container max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h2 className="text-h2 font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6">
+      <Container size="lg" className="relative z-10">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-h2 font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8">
             Chicago Fulton Market <span className="text-amber-200/90">Apartments FAQ</span>
           </h2>
           <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-200/60 to-transparent mx-auto" />
         </div>
         
-        <div className="space-y-6">
+        <div className="space-y-8">
           {faqs.map((faq, index) => (
             <div key={index} 
                  className={`luxury-card rounded-2xl p-8 transition-all duration-500 hover:scale-[1.02] animate-fade-in-up stagger-${index + 1}`}>
@@ -90,7 +91,7 @@ export default function FAQ() {
             <span className="text-button">Contact Us</span>
           </GlassButton>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

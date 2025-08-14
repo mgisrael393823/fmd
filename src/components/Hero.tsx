@@ -1,11 +1,18 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Hero as LampHero } from "@/components/ui/hero";
+import { Container } from '@/components/design-system';
 
 export default function Hero() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +43,7 @@ export default function Hero() {
 
   return (
     <LampHero
-      className="min-h-screen bg-black"
+      className="min-h-[85vh] bg-black"
       title={
         <>
           <span className="text-white">Fulton Market Chicago</span>{" "}
@@ -45,22 +52,36 @@ export default function Hero() {
       }
       subtitle="Discover luxury apartments in Chicago's Fulton Market - the West Loop's most desirable neighborhood. Premium studios, 1BR, and 2BR units available now."
       customActions={
-        <div className="pt-8">
-          {isSubmitted ? (
+        <Container size="sm" className="pt-8">
+          {!mounted ? (
+            <div className="px-8 py-4 bg-amber-200/90 text-black font-medium text-lg rounded-lg opacity-0">
+              Join the Waitlist
+            </div>
+          ) : isSubmitted ? (
             <div className="text-center">
               <div className="text-green-400 text-xl mb-4">✓ Thank you for joining!</div>
               <p className="text-neutral-300">We'll be in touch soon with exclusive opportunities.</p>
             </div>
+          ) : !showEmailInput ? (
+            <div className="text-center">
+              <button
+                onClick={() => setShowEmailInput(true)}
+                className="px-8 py-4 bg-amber-200/90 hover:bg-amber-200 text-black font-medium text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Join the Waitlist
+              </button>
+            </div>
           ) : (
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-              <div className="flex gap-3">
+            <form onSubmit={handleSubmit}>
+              <div className="flex gap-4 animate-fade-in">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="flex-1 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:border-amber-200/50 focus:outline-none focus:ring-2 focus:ring-amber-200/20"
+                  autoFocus
+                  className="flex-1 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:border-amber-200/50 focus:outline-none focus:ring-2 focus:ring-amber-200/20 transition-all duration-300"
                 />
                 <button
                   type="submit"
@@ -70,12 +91,19 @@ export default function Hero() {
                   {isSubmitting ? 'Joining...' : 'Join'}
                 </button>
               </div>
+              <button
+                type="button"
+                onClick={() => setShowEmailInput(false)}
+                className="mt-4 text-sm text-neutral-400 hover:text-neutral-300 transition-colors underline"
+              >
+                Cancel
+              </button>
             </form>
           )}
-        </div>
+        </Container>
       }
-      titleClassName="text-h1 font-serif text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white mb-8 hero-text"
-      subtitleClassName="text-body-light text-xl md:text-2xl lg:text-3xl text-neutral-200 max-w-3xl mx-auto"
+      titleClassName="text-h1 font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 hero-text"
+      subtitleClassName="text-body-light text-lg md:text-xl lg:text-2xl text-neutral-200"
     />
   );
 }

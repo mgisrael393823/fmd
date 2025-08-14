@@ -1,14 +1,21 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GlassButton } from "@/components/ui/glass-button";
+import { Container, Section } from '@/components/design-system';
 
 export default function FinalCTA() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-black to-neutral-950">
+    <Section padding="xl" className="overflow-hidden bg-gradient-to-b from-black to-neutral-950">
       {/* Enhanced background with parallax */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 transform scale-110"
@@ -17,14 +24,14 @@ export default function FinalCTA() {
         }}
       />
       
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80" />
-      <div className="absolute inset-0 bg-grain opacity-15" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80 transform scale-110" />
+      <div className="absolute inset-0 bg-grain opacity-15 transform scale-110" />
       
       {/* Floating accent elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-amber-200/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-amber-200/3 rounded-full blur-3xl" />
       
-      <div className="relative z-10 container max-w-5xl mx-auto text-center">
+      <Container size="lg" className="relative z-10 text-center">
         <div className="animate-fade-in-up">
           <h2 className="text-h2 font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8">
             Discover Chicago's{" "}
@@ -37,17 +44,34 @@ export default function FinalCTA() {
           
           <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-200/60 to-transparent mx-auto mb-12" />
           
-          <p className="text-body-light text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-16 max-w-3xl mx-auto">
-            Join our network to access Chicago's most premium Fulton Market rental opportunities and personalized service.
-          </p>
+          <Container size="md">
+            <p className="text-body-light text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-16">
+              Join our network to access Chicago's most premium Fulton Market rental opportunities and personalized service.
+            </p>
+          </Container>
         </div>
         
         <div className="animate-fade-in-up-delay">
-          {isSubmitted ? (
+          {!mounted ? (
+            <GlassButton 
+              size="lg"
+              className="glass-primary opacity-0"
+            >
+              <span className="text-button text-xl">Join the Waitlist</span>
+            </GlassButton>
+          ) : isSubmitted ? (
             <div className="text-center">
               <div className="text-green-400 text-xl mb-4">✓ Thank you for joining!</div>
               <p className="text-neutral-300">We'll be in touch soon with exclusive opportunities.</p>
             </div>
+          ) : !showEmailInput ? (
+            <GlassButton 
+              onClick={() => setShowEmailInput(true)}
+              size="lg"
+              className="glass-primary transform hover:scale-105 transition-transform duration-300"
+            >
+              <span className="text-button text-xl">Join the Waitlist</span>
+            </GlassButton>
           ) : (
             <form 
               action="https://formspree.io/f/xvgqyoyd"
@@ -79,9 +103,8 @@ export default function FinalCTA() {
                 }
                 setIsSubmitting(false);
               }}
-              className="max-w-md mx-auto"
             >
-              <div className="flex gap-4">
+              <div className="flex gap-4 animate-fade-in">
                 <input
                   type="email"
                   name="email"
@@ -89,7 +112,8 @@ export default function FinalCTA() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:border-amber-200/50 focus:outline-none focus:ring-2 focus:ring-amber-200/20"
+                  autoFocus
+                  className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:border-amber-200/50 focus:outline-none focus:ring-2 focus:ring-amber-200/20 transition-all duration-300"
                 />
                 <input type="hidden" name="source" value="Fulton Market Waitlist" />
                 <GlassButton 
@@ -100,6 +124,13 @@ export default function FinalCTA() {
                   {isSubmitting ? 'Joining...' : 'Join'}
                 </GlassButton>
               </div>
+              <button
+                type="button"
+                onClick={() => setShowEmailInput(false)}
+                className="mt-4 text-sm text-neutral-400 hover:text-neutral-300 transition-colors underline"
+              >
+                Cancel
+              </button>
             </form>
           )}
         </div>
@@ -121,7 +152,7 @@ export default function FinalCTA() {
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
