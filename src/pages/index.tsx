@@ -103,75 +103,80 @@ export default function Home() {
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
         <link rel="manifest" href="/site.webmanifest" />
         
-        {/* Structured Data for Local Business */}
+        {/* Structured Data for Local Business and Products */}
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": ["RealEstateAgent", "LocalBusiness"],
-              "name": "Fulton Market Chicago Apartments",
-              "alternateName": "Rent Fulton Market Chicago",
-              "description": "Find the best Fulton Market Chicago apartments for rent. Premium apartment rentals in Chicago's West Loop most desirable neighborhood.",
-              "url": "https://rentfultonmarket.apartments/",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Chicago",
-                "addressRegion": "IL",
-                "addressCountry": "US",
-                "streetAddress": "Fulton Market District",
-                "postalCode": "60607"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": ["RealEstateAgent", "LocalBusiness"],
+                "name": "Fulton Market Chicago Apartments",
+                "alternateName": "Rent Fulton Market Chicago",
+                "description": "Find the best Fulton Market Chicago apartments for rent. Premium apartment rentals in Chicago's West Loop most desirable neighborhood.",
+                "url": "https://rentfultonmarket.apartments/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Chicago",
+                  "addressRegion": "IL",
+                  "addressCountry": "US",
+                  "streetAddress": "Fulton Market District",
+                  "postalCode": "60607"
+                },
+                "areaServed": [
+                  "Fulton Market, Chicago, IL",
+                  "West Loop, Chicago, IL",
+                  "Near West Side, Chicago, IL"
+                ],
+                "serviceType": ["Chicago Apartment Rentals", "Fulton Market Chicago Luxury Apartment Rentals", "Chicago Studio Apartments", "Chicago 1 Bedroom Apartments", "Chicago 2 Bedroom Apartments"],
+                "priceRange": "$2000-$6000",
+                "telephone": "+1-312-XXX-XXXX",
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "41.8858",
+                  "longitude": "-87.6467"
+                }
               },
-              "areaServed": [
-                "Fulton Market, Chicago, IL",
-                "West Loop, Chicago, IL",
-                "Near West Side, Chicago, IL"
-              ],
-              "serviceType": ["Chicago Apartment Rentals", "Fulton Market Chicago Luxury Apartment Rentals", "Chicago Studio Apartments", "Chicago 1 Bedroom Apartments", "Chicago 2 Bedroom Apartments"],
-              "priceRange": "$2000-$6000",
-              "telephone": "+1-312-XXX-XXXX",
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "41.8858",
-                "longitude": "-87.6467"
+              {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "@id": "#studio",
+                "name": "Studio Apartments in Fulton Market Chicago",
+                "url": "https://rentfultonmarket.apartments/#studio",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "2000",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                }
               },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Fulton Market Chicago Apartment Rentals",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "price": "2000",
-                    "priceCurrency": "USD",
-                    "availability": "http://schema.org/InStock",
-                    "itemOffered": {
-                      "@type": "Product",
-                      "name": "Studio Apartments in Fulton Market Chicago"
-                    }
-                  },
-                  {
-                    "@type": "Offer", 
-                    "price": "2500",
-                    "priceCurrency": "USD",
-                    "availability": "http://schema.org/InStock",
-                    "itemOffered": {
-                      "@type": "Product",
-                      "name": "1 Bedroom Apartments in Fulton Market Chicago"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "price": "3500",
-                    "priceCurrency": "USD",
-                    "availability": "http://schema.org/InStock",
-                    "itemOffered": {
-                      "@type": "Product", 
-                      "name": "2 Bedroom Apartments in Fulton Market Chicago"
-                    }
-                  }
-                ]
+              {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "@id": "#1br",
+                "name": "1 Bedroom Apartments in Fulton Market Chicago",
+                "url": "https://rentfultonmarket.apartments/#1br",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "2500",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "@id": "#2br",
+                "name": "2 Bedroom Apartments in Fulton Market Chicago",
+                "url": "https://rentfultonmarket.apartments/#2br",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "3500",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                }
               }
-            })
+            ])
           }}
         />
         
