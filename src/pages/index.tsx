@@ -139,66 +139,51 @@ export default function Home() {
               },
               {
                 "@context": "https://schema.org",
-                "@type": "Product",
-                "@id": "#studio",
-                "name": "Studio Apartments in Fulton Market Chicago",
-                "url": "https://rentfultonmarket.apartments/#studio",
-                "image": ["https://rentfultonmarket.apartments/images/studio.jpg"],
-                "description": "Modern studio apartments in Chicago's Fulton Market district featuring premium finishes and amenities",
-                "brand": {
-                  "@type": "Brand",
-                  "name": "Rent Fulton Market"
+                "@type": "ApartmentComplex",
+                "@id": "#fulton-market-apartments",
+                "name": "Fulton Market Luxury Apartments",
+                "url": "https://rentfultonmarket.apartments/",
+                "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop",
+                "description": "Luxury apartment complex in Chicago's Fulton Market district featuring studio, 1-bedroom, and 2-bedroom units with premium finishes and world-class amenities",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Fulton Market District",
+                  "addressLocality": "Chicago",
+                  "addressRegion": "Illinois",
+                  "postalCode": "60607",
+                  "addressCountry": "United States"
                 },
-                "offers": {
-                  "@type": "Offer",
-                  "price": "2000",
-                  "priceCurrency": "USD",
-                  "availability": "https://schema.org/InStock",
-                  "url": "https://rentfultonmarket.apartments/#studio",
-                  "itemCondition": "https://schema.org/NewCondition"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Product",
-                "@id": "#1br",
-                "name": "1 Bedroom Apartments in Fulton Market Chicago",
-                "url": "https://rentfultonmarket.apartments/#1br",
-                "image": ["https://rentfultonmarket.apartments/images/1br.jpg"],
-                "description": "Spacious 1-bedroom apartments in Chicago's Fulton Market with modern layouts and luxury amenities",
-                "brand": {
-                  "@type": "Brand",
-                  "name": "Rent Fulton Market"
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "41.8858",
+                  "longitude": "-87.6467"
                 },
-                "offers": {
-                  "@type": "Offer",
-                  "price": "2500",
-                  "priceCurrency": "USD",
-                  "availability": "https://schema.org/InStock",
-                  "url": "https://rentfultonmarket.apartments/#1br",
-                  "itemCondition": "https://schema.org/NewCondition"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Product",
-                "@id": "#2br",
-                "name": "2 Bedroom Apartments in Fulton Market Chicago",
-                "url": "https://rentfultonmarket.apartments/#2br",
-                "image": ["https://rentfultonmarket.apartments/images/2br.jpg"],
-                "description": "Premium 2-bedroom apartments in Chicago's Fulton Market offering spacious living and high-end finishes",
-                "brand": {
-                  "@type": "Brand",
-                  "name": "Rent Fulton Market"
-                },
-                "offers": {
-                  "@type": "Offer",
-                  "price": "3500",
-                  "priceCurrency": "USD",
-                  "availability": "https://schema.org/InStock",
-                  "url": "https://rentfultonmarket.apartments/#2br",
-                  "itemCondition": "https://schema.org/NewCondition"
-                }
+                "numberOfAccommodationUnits": 300,
+                "amenityFeature": [
+                  {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Rooftop Terrace",
+                    "value": true
+                  },
+                  {
+                    "@type": "LocationFeatureSpecification", 
+                    "name": "Fitness Center",
+                    "value": true
+                  },
+                  {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Concierge Services", 
+                    "value": true
+                  },
+                  {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Pet Spa",
+                    "value": true
+                  }
+                ],
+                "petsAllowed": true,
+                "availableLanguage": ["English"],
+                "priceRange": "$2000-$6000"
               }
             ])
           }}

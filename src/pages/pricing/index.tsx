@@ -137,32 +137,51 @@ export default function Pricing() {
         <meta property="og:url" content="https://rentfultonmarket.apartments/pricing/" />
         <meta property="og:type" content="website" />
         
-        {/* Pricing Schema */}
+        {/* Real Estate Schema */}
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Product",
-              "name": "Fulton Market Luxury Apartments",
-              "description": "Premium apartment rentals in Chicago's Fulton Market district",
-              "offers": pricingTiers.map(tier => ({
+              "@type": "RealEstateAgent",
+              "name": "Fulton Market Apartments",
+              "description": "Premium apartment rental services in Chicago's Fulton Market district",
+              "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Fulton Market District",
+                "addressLocality": "Chicago",
+                "addressRegion": "Illinois",
+                "postalCode": "60607",
+                "addressCountry": "United States"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "41.8858",
+                "longitude": "-87.6467"
+              },
+              "url": "https://rentfultonmarket.apartments/pricing/",
+              "serviceArea": {
+                "@type": "Place",
+                "name": "Fulton Market, Chicago, IL"
+              },
+              "makesOffer": pricingTiers.map(tier => ({
                 "@type": "Offer",
                 "name": tier.title,
+                "description": tier.description,
                 "price": tier.averagePrice.replace('$', '').replace(',', ''),
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
+                "category": "Apartment Rental",
+                "areaServed": "Fulton Market, Chicago",
                 "priceSpecification": {
                   "@type": "UnitPriceSpecification",
                   "price": tier.averagePrice.replace('$', '').replace(',', ''),
                   "priceCurrency": "USD",
-                  "unitCode": "MON"
+                  "unitCode": "MON",
+                  "billingIncrement": 1
                 }
-              })),
-              "provider": {
-                "@type": "RealEstateAgent",
-                "name": "Fulton Market Apartments"
-              }
+              }))
             })
           }}
         />
